@@ -3,6 +3,7 @@ on:
   push:
     branchs: 
       - [master]
+jobs:      
   deploy:
     runs-on: ubuntu-18.04
     steps:
