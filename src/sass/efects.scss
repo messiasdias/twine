@@ -1,0 +1,44 @@
+@mixin no-show-scroll {
+  scroll-margin: 20px;
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+  }
+}
+
+@mixin shadow ($size: 20px, $shadow_zize: 60px, $dark: rgba($black2, .1), $light: $white2, $radius: 5px) {
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow:  $size $size $shadow_zize rgba($black2, .1),
+              -#{$size} -#{$size} 60px $white2;
+}
+
+@mixin shadow-reverse ($size: 20px, $shadow_zize: 60px, $dark: rgba($black2, .1), $light: $white2, $radius: 5px) {
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow:  -#{$size} -#{$size} 60px $white2,
+              $size $size $shadow_zize rgba($black2, .1);
+}
+
+.shadow-radius {
+  @include shadow(20px, 60px, rgba($black2, .1), $white2, 5px);
+}
+
+.shadow-radius2 {
+  @include shadow(20px, 60px, $black2, $white2, 5px);
+}
+
+.shadow-radius-reverse {
+  @include shadow-reverse(20px, 60px, $black2, $white2, 5px);
+}

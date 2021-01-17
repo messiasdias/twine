@@ -1,0 +1,222 @@
+
+.header {
+  @extend .flex;;
+  width: 100% !important;
+  flex-direction: column;
+  background-color: $color1;
+
+  &-top {
+    @extend .flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-around;
+
+    @media screen and (max-width: $lg) {
+      justify-content: space-between;
+    }
+
+    .logo {
+      @extend .flex;
+      background-color: $white;
+      padding: 10px;
+      min-height: 40px;
+      border-radius: 0px 0px 30px 30px;
+      transform: translateY(-2px);
+      cursor: pointer;
+      transition: transform ease-in-out .3s;
+      @media screen and (max-width: $lg) {
+        margin-left: 10%;
+      }
+      
+      img {
+        width: 28px;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        transition: transform ease-in-out .3s;
+      }
+    }
+
+    .menu {
+      @media screen and (max-width: $lg) {
+        display: none;
+      }
+      & > ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        li {
+          display: inline;
+          margin: 5px;
+
+          a {
+            color: $white;
+            padding: 5px;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: lighter;
+            transition: transform ease-in-out .3s;
+            &:hover, .active {
+              color: $color2;
+              transform: translateY(-5px);
+              transition: transform ease-in-out .3s;
+            }
+          }
+        }
+      }
+    }
+
+    .menu-trigger{
+      @extend .flex;
+      display: none;
+      @media screen and (max-width: $lg) {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5%;
+      }
+      background-color: transparent;
+      padding: 10px;
+      min-height: 40px;
+      border-radius: 30px 30px 0px 0px;
+      cursor: pointer;
+      transition: transform ease-in-out .3s;
+
+      img {
+        width: 28px;
+      }
+
+      & > a {
+        position: relative;
+        @extend .flex;
+        flex-direction: column;
+        span {
+          background: $white;
+          width: 28px;
+          height: 4px;
+          margin: 3px;
+        }
+      }
+    }
+
+    .menu-trigger-fixed{
+      @extend .menu-trigger;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+      background-color: $color1;
+      padding: 10px;
+      min-height: 40px;
+      border-radius: 30px 30px 0px 0px;
+
+      span {
+        background: $white;
+      }
+    }
+
+  }
+
+  &-body{
+    @extend .flex;
+    justify-content: space-around;
+    width: 100%;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column-reverse;
+      padding: 0px !important;
+      overflow: hidden;
+    }
+
+    .left{
+      padding: 40px;
+      h1, strong, small{
+        color: white;
+        margin: 5px;
+        max-width: 200px;
+        font-weight: lighter;
+        text-justify: inter-word;
+      }
+      h1 {
+        font-weight: 400;
+      }
+      strong {
+        font-weight: 400;
+      }
+    }
+
+    .right {
+      padding: 30px;
+      @extend .flex;
+
+      @media screen and (max-width: $lg) {
+        padding: 0 !important;
+      }
+
+      .imgbox1, .imgbox2{
+        @extend .shadow-radius2;
+        border: solid 3px $color2;
+        margin: 5px;
+        transition: transform ease-in-out .3s;
+        @media screen and (max-width: $md) {
+          box-shadow: none;
+        }
+        &:hover{
+          transform: translateY(-5px);
+          transition: transform ease-in-out .3s;
+          z-index: 3 !important;
+        }
+      }
+
+      .imgbox1{
+        @extend .flex;
+        min-width: 300px;
+        min-height: 320px;
+        transform: rotate(-11deg);
+        background-image: url("../img/01.jpg");
+        background-position: center top;
+        background-size: cover;
+        @media screen and (max-width: $sm) {
+          width: 80%;
+          z-index: 2 !important;
+        }
+
+        .play{
+          @extend .flex;
+          padding: 20px 25px;
+          border-radius: 100%;
+          background: $white3;
+
+          
+          .play-int {
+            position: relative;
+            width: 0; 
+            height: 0; 
+            border-top: 13px solid transparent;
+            border-bottom: 13px solid transparent;
+            border-left: 13px solid $black2;
+          }
+        }
+      }
+
+      .imgbox2{
+        min-width: 120px;
+        min-height: 140px;
+        transform: rotate(11deg) translate(-30px, 30px);
+        background-image: url("../img/lapisdecor.jpeg");
+        background-position: center top;
+        background-size: 200%;
+        @media screen and (max-width: $sm) {
+          width: 10%;
+        }
+      }
+
+    }
+  }
+
+  &-wave {
+    fill: $color1;
+    transform: translateY(-20px);
+  }
+}
+

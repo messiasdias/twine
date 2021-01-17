@@ -1,0 +1,166 @@
+
+.gallery {
+  @extend .flex;
+  @include no-show-scroll;
+  position: sticky;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-x: scroll;
+  min-width: 40%;
+  height: 100%;
+  box-sizing: border-box;
+
+  @media screen and (max-width: $md) {
+    width: 100%;
+  }
+
+  
+  &-content{
+    @extend .flex;
+    position: relative;
+    box-sizing: border-box;
+    background-color: inherit;
+    min-width: 100% inherit;
+    height: 100%;
+    z-index: 1;
+
+    @media screen and (min-width: 1120px) {
+      padding: 80px 40px;
+    }
+
+    @media screen and (max-width:  1120px) {
+      padding: 80px 40px;
+    }
+
+    @media screen and (max-width:  $md) {
+      padding: 40px 20px;
+    }
+  
+    .slide {
+      @extend .shadow-radius-reverse;
+      margin: 10px;
+      box-sizing: border-box;
+      user-select: none;
+      border: solid 5px $white;
+      transition: transform ease-in-out .3s;
+
+      img {
+        width: 250px;
+        height: 230px;
+      }
+
+      .close {
+        cursor: pointer;
+        position: fixed;
+        z-index: 3;
+        top: 30px;
+        right: 30px;
+        color: $black2;
+        display: none;
+      }
+
+      & > .prev, & > .next {
+        position: fixed;
+        z-index: 3;
+        color: $black2;
+        display: none;
+        font-size: 5rem;
+      }
+
+      & > .prev {
+        top: calc(50% - 2.5rem);
+        left: 20px;
+      }
+
+      & > .next {
+        top: calc(50% - 2.5rem);
+        right: 20px;
+      }
+
+      &:hover{
+        @extend .shadow-radius2;
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: transform ease-in-out .3s;
+        z-index: 2;
+
+        .gallery > .gallery-controls {
+          display: none;
+        }
+      }
+    }
+
+    .slide.active {
+      @extend .flex;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 3;
+      top: 0;
+      left:0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: rgba($color1, .3);
+      border: none;
+      box-sizing: border-box;
+
+      & > .close, & > .prev, & > .next {
+        display: block;
+      }
+
+      img {
+        @extend .shadow-radius;
+        min-width: 60vw;
+        max-width: 80vw;
+        max-height: 80vh;
+        height: auto;
+        border: solid 5px $white;
+        box-sizing: border-box;
+      }
+
+      &:hover{
+        transform: scale(1);
+      }
+    }
+  }
+
+  &-controls{
+    @extend .flex;
+    position: sticky;
+    z-index: 1;
+    bottom: 70px;
+    left: 40px;
+    padding: 0;
+    margin: 0;
+
+    @media screen and (max-width: $md) {
+      bottom: -40px;
+      left: 0px;
+    }
+
+    span {
+      @extend .flex, .shadow-radius2;
+      background-color: $white;
+      color: $black2;
+      margin: 5px;
+      border-radius: 100%;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      transition: transform ease-in-out .3s;
+
+      .material-icon, i {
+        font-size: 1.2rem;
+      }
+
+      &:hover{
+        background-color: rgba($color2, .7);
+        color: $white;
+        transform: translate(0,-5px) scale(1.1);
+        transition: transform ease-in-out .3s;
+      }
+    }
+  }
+
+}

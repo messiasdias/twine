@@ -1,0 +1,40 @@
+.btn {
+  @extend .shadow-radius;
+  margin: 10px;
+  padding: 8px 25px;
+  background-color: #ccc;
+  text-decoration: none;
+  transition: transform ease-in-out .3s;
+  border-radius: 3px;
+  user-select: none;
+
+  &:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: transform ease-in-out .3s;
+  }
+
+  &-content {
+    @extend .flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 20px 0px;
+    & > a:first-child{
+      margin-left: 0 !important;
+    }
+  }
+
+  &-primary, &-white{
+    @extend .btn;
+  }
+
+  &-primary {
+    color: $white;
+    background-color: $color2;
+  }
+
+  &-white {
+    color: $color2;
+    background-color: $white;
+  }
+}
