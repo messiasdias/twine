@@ -10,7 +10,7 @@
     flex-direction: column;
   }
 
-  .text-content {
+  & > .text-content {
     box-sizing: border-box;
     padding: 40px;
     max-width: 30%;
@@ -36,7 +36,7 @@
       border-left: solid 5px $color1;
       flex-direction: column;
       align-items: flex-start;
-      & > span {
+      span {
         color: $black2;
         font-size: .8rem;
         text-align: left;
@@ -45,7 +45,7 @@
     }
   }
 
-  .img-content{
+  & > .img-content{
     padding: 30px;
     box-sizing: border-box;
 
@@ -71,6 +71,9 @@
     @media screen and (min-width: $lg) {
       width: 50%;
     }
+    @media screen and (max-width: $lg) {
+      padding: 0;
+    }
   }
 
   .section-card {
@@ -90,7 +93,7 @@
     }
 
     @media screen and (max-width: $md) {
-      width: calc(80% - 20px);
+      width: calc(90% - 20px);
       justify-content: stretch;
     }
 
@@ -160,21 +163,28 @@
     }
   }
 
-
-  .cards-content2{
+  .cards-content2, .cards-content3{
     @extend .flex;
     align-items: center;
     flex-wrap: wrap;
     padding: 40px 20px;
     width: 100%;
     box-sizing: border-box;
+  }
 
+  .cards-content2{
     & > .section-card2 {
       width: 30%;
       @media screen and (min-width: $xl) {width: 20%;}
       @media screen and (max-width: $md) {width: 45%;}
-      @media screen and (max-width: $sm) {width: 80%;}
+      @media screen and (max-width: $sm) {width: 90%;}
+      @media screen and (max-width: $lg) {padding: 0;}
     }
+  }
+
+  .cards-content3{
+    padding: 0;
+    justify-content: center !important;
   }
 
   .section-card2 {
@@ -194,14 +204,139 @@
       padding: 0;
     }
 
-    &:hover{
+    &:hover, &.active{
       border-top-color: $color1;
       & > .icon {
         color: $color2;
         transform: none;
       }
     }
-  } 
+  }
+  
+  .section-card3, .section-card4 {
+    @extend .flex;
+    @include shadow-reverse(2px, 10px, $black2, $white2);
+    @media screen and (max-width: $lg) {width: 90%;}
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    min-height: 300px;
+    margin: 20px;
+  }
+
+  .section-card3 {
+    @extend .flex;
+    position: relative;
+    background-color: $white;
+    flex-direction: column;
+
+    & > .top,  & > .content{
+      @extend .flex;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+      border-bottom: solid 1px $black2;
+      padding: 20px 0px;
+
+      &  > .left,  & > .right {
+        @extend .flex;
+        flex-direction: column;
+        align-items: flex-start;
+        strong, p{
+          color: $black;
+          font-size: .8rem;
+        }
+
+        small, label{
+          font-size: .7rem;
+        }
+      }
+    }
+
+    & > .top{
+      padding-top: 0;
+      img, .left > img{
+        width: 40px;
+        height: 40px;
+      }
+
+      & > .right {
+        strong, p{
+          color: $black;
+          margin-bottom: 5px;
+        }
+        small{
+          color: $color1;
+          font-weight: 500;
+        }
+      }
+    }
+
+    & > .content {
+      & > .left, & > .right {
+        strong, p{
+          color: $black;
+        }
+        small, label{
+          color: $black2;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    & > .bottom{
+      @extend .flex;
+      position: relative;
+      flex-direction: column;
+      padding-bottom: 0;
+
+      strong, small, p{
+        font-size: .75rem;
+        color: $black2;
+        text-align: center;
+      }
+      .btn-primary{
+        font-size: .8rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .section-card4 {
+    background-color: transparent;
+    align-items: flex-start;
+
+    & > .text-content{
+      padding: 20px 5px;
+      h2 {
+        color: $white;
+        font-size: 1rem;
+        margin: 0;
+      }
+      strong, label, p , small{
+        color: $white;
+        font-size: .75rem;
+      }
+      strong, label {
+        font-size: .6rem;
+      }
+      .link{
+        color: $white;
+      }
+      .text-block {
+        @extend .flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-left: solid 5px $white;
+        &  > span {
+          color: $white;
+          font-size: .65rem;
+          margin-left: 5px
+        }
+      }
+    }
+  }
 
 }
 

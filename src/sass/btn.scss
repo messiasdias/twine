@@ -7,6 +7,8 @@
   transition: transform ease-in-out .3s;
   border-radius: 3px;
   user-select: none;
+  text-align: center;
+  font-size: .8rem;
 
   &:hover{
     cursor: pointer;

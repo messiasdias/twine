@@ -17,28 +17,33 @@
   }
 }
 
-@mixin shadow ($size: 20px, $shadow_zize: 60px, $dark: rgba($black2, .1), $light: $white2, $radius: 5px) {
+@mixin shadow ($size: 20px, $shadow_zize: 60px, $dark, $light) {
   box-sizing: border-box;
   border-radius: 5px;
-  box-shadow:  $size $size $shadow_zize rgba($black2, .1),
-              -#{$size} -#{$size} 60px $white2;
+  box-shadow:  $size $size $shadow_zize $dark,
+              -#{$size} -#{$size} 60px $light;
 }
 
-@mixin shadow-reverse ($size: 20px, $shadow_zize: 60px, $dark: rgba($black2, .1), $light: $white2, $radius: 5px) {
+@mixin shadow-reverse ($size: 20px, $shadow_zize: 60px, $dark, $light) {
   box-sizing: border-box;
   border-radius: 5px;
-  box-shadow:  -#{$size} -#{$size} 60px $white2,
-              $size $size $shadow_zize rgba($black2, .1);
+  box-shadow:  -#{$size} -#{$size} 60px $light,
+              $size $size $shadow_zize $dark;
+}
+
+
+.shadow-radius, .shadow-radius2, .shadow-radius-reverse{
+  border-radius: 5px;
 }
 
 .shadow-radius {
-  @include shadow(20px, 60px, rgba($black2, .1), $white2, 5px);
+  @include shadow(20px, 60px, rgba($black2, .1), $white2);
 }
 
 .shadow-radius2 {
-  @include shadow(20px, 60px, $black2, $white2, 5px);
+  @include shadow(20px, 60px, $black2, $white2);
 }
 
 .shadow-radius-reverse {
-  @include shadow-reverse(20px, 60px, $black2, $white2, 5px);
+  @include shadow-reverse(20px, 60px, $black2, $white2);
 }
