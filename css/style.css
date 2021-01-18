@@ -72,7 +72,7 @@ main {
 }
 .btn-primary {
   color: white;
-  background-color: rgba(255, 217, 0, 0.897);
+  background-color: #ffd900;
 }
 .btn-white {
   color: #909090;
@@ -82,7 +82,7 @@ main {
 .header {
   width: 100% !important;
   flex-direction: column;
-  background-color: #ff510d;
+  background-color: #fd7a00;
 }
 .header-top {
   width: 100%;
@@ -139,10 +139,10 @@ main {
   transition: transform ease-in-out 0.3s;
 }
 .header-top .menu > ul li a .active {
-  color: rgba(255, 217, 0, 0.897) !important;
+  color: #ffd900 !important;
 }
 .header-top .menu > ul li:hover > a {
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
 }
 .header-top .menu-trigger, .header-top .menu-trigger-fixed {
   display: none;
@@ -177,7 +177,7 @@ main {
   position: fixed;
   top: 0;
   z-index: 10;
-  background-color: #ff510d;
+  background-color: #fd7a00;
   padding: 10px;
   min-height: 40px;
   border-radius: 30px 30px 0px 0px;
@@ -223,7 +223,7 @@ main {
 .header-body > .right .imgbox1, .header-body > .right .imgbox2 {
   box-sizing: border-box;
   box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.7), -10px -10px 60px rgba(255, 255, 255, 0.1);
-  border: solid 3px rgba(255, 217, 0, 0.897);
+  border: solid 3px #ffd900;
   border-radius: 5px;
   margin: 5px;
   transition: transform ease-in-out 0.3s;
@@ -279,7 +279,7 @@ main {
   }
 }
 .header-wave {
-  fill: #ff510d;
+  fill: #fd7a00;
   transform: translateY(-20px);
 }
 
@@ -307,7 +307,7 @@ main {
   }
 }
 .section > .text-content strong, .section-primary > .text-content strong, .section-grey > .text-content strong {
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
   margin: 0px;
 }
 .section > .text-content h2, .section-primary > .text-content h2, .section-grey > .text-content h2 {
@@ -317,10 +317,10 @@ main {
   color: rgba(0, 0, 0, 0.3);
 }
 .section > .text-content .link, .section-primary > .text-content .link, .section-grey > .text-content .link {
-  color: #ff510d;
+  color: #fd7a00;
 }
 .section > .text-content .text-block, .section-primary > .text-content .text-block, .section-grey > .text-content .text-block {
-  border-left: solid 5px #ff510d;
+  border-left: solid 5px #fd7a00;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -412,11 +412,11 @@ main {
   font-size: 1.5rem;
 }
 .section .section-card .icon-primary, .section-primary .section-card .icon-primary, .section-grey .section-card .icon-primary, .section .section-card2 .icon-primary, .section-primary .section-card2 .icon-primary, .section-grey .section-card2 .icon-primary {
-  color: #ff510d;
-  background-color: rgba(255, 81, 13, 0.2);
+  color: #fd7a00;
+  background-color: rgba(253, 122, 0, 0.2);
 }
 .section .section-card .icon-secondary, .section-primary .section-card .icon-secondary, .section-grey .section-card .icon-secondary, .section .section-card2 .icon-secondary, .section-primary .section-card2 .icon-secondary, .section-grey .section-card2 .icon-secondary {
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
   background-color: rgba(255, 217, 0, 0.2);
 }
 .section .section-card .icon-purple, .section-primary .section-card .icon-purple, .section-grey .section-card .icon-purple, .section .section-card2 .icon-purple, .section-primary .section-card2 .icon-purple, .section-grey .section-card2 .icon-purple {
@@ -485,12 +485,12 @@ main {
   padding: 0;
 }
 .section .section-card2:hover, .section-primary .section-card2:hover, .section-grey .section-card2:hover, .section .section-card2.active, .section-primary .section-card2.active, .section-grey .section-card2.active {
-  border-top-color: #ff510d;
+  border-top-color: #fd7a00;
   transform: scale(1.1);
   transition: transform ease-in-out 0.3s;
 }
 .section .section-card2:hover > .icon, .section-primary .section-card2:hover > .icon, .section-grey .section-card2:hover > .icon, .section .section-card2.active > .icon, .section-primary .section-card2.active > .icon, .section-grey .section-card2.active > .icon {
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
   transform: none;
 }
 .section .section-card3, .section-primary .section-card3, .section-grey .section-card3, .section .section-card4, .section-primary .section-card4, .section-grey .section-card4 {
@@ -543,7 +543,7 @@ main {
   margin-bottom: 5px;
 }
 .section .section-card3 > .top > .right small, .section-primary .section-card3 > .top > .right small, .section-grey .section-card3 > .top > .right small {
-  color: #ff510d;
+  color: #fd7a00;
   font-weight: 500;
 }
 .section .section-card3 > .content > .left strong, .section-primary .section-card3 > .content > .left strong, .section-grey .section-card3 > .content > .left strong, .section .section-card3 > .content > .left p, .section-primary .section-card3 > .content > .left p, .section-grey .section-card3 > .content > .left p, .section .section-card3 > .content > .right strong, .section-primary .section-card3 > .content > .right strong, .section-grey .section-card3 > .content > .right strong, .section .section-card3 > .content > .right p, .section-primary .section-card3 > .content > .right p, .section-grey .section-card3 > .content > .right p {
@@ -606,7 +606,7 @@ main {
 }
 
 .section-primary {
-  background-color: #ff510d;
+  background-color: #fd7a00;
   color: white;
   padding: 30px;
 }
@@ -718,7 +718,7 @@ main {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(255, 81, 13, 0.3);
+  background-color: rgba(253, 122, 0, 0.3);
   border: none;
   box-sizing: border-box;
 }
@@ -775,7 +775,7 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: center !important;
-  background-color: #ff510d;
+  background-color: #fd7a00;
   padding: 10px 20px;
   box-sizing: border-box;
 }
@@ -832,7 +832,7 @@ main {
   font-size: 0.65rem;
 }
 .footer .footer-menu > li:hover > a, .footer .footer-menu > li .active > a {
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
 }
 .footer .social {
   flex-wrap: wrap;
@@ -841,7 +841,7 @@ main {
   padding: 0;
 }
 .footer .social .material-icon, .footer .social i, .footer .social svg {
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
   font-size: 1.5rem;
   margin: 5px;
 }
@@ -868,7 +868,7 @@ main {
 }
 .footer .contact-group label {
   font-size: 0.65rem;
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
   font-weight: bold;
   margin-right: 5px;
 }
@@ -885,7 +885,7 @@ main {
   color: white;
 }
 .footer .copyright > a, .footer .copyright > .link {
-  color: rgba(255, 217, 0, 0.897);
+  color: #ffd900;
 }
 @media screen and (min-width: 768px) {
   .footer .copyright {
