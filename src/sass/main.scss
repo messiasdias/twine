@@ -1,4 +1,5 @@
 @import "variables";
+//@import "variables-dark";
 @import "efects";
 
 //Fonts
@@ -22,6 +23,7 @@ main {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: $white;
 }
 
 .flex {
@@ -37,5 +39,142 @@ main {
 
 
 .footer{
-  border: solid 1px red;
+  @extend .flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center !important;
+  background-color: $color1;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+  @media screen and (min-width: $md) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+
+  &  > .left, & > .right {
+    //border: solid 1px red;
+    @extend .flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    
+
+    @media screen and (min-width: $md) {
+      align-items: flex-start;
+      width: 50%;
+    }
+  }
+
+
+  & > .right {
+    align-self: flex-end;
+    @media screen and (min-width: $md) {
+      align-items: flex-end !important;
+    }
+  }
+
+
+
+  & .footer-menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 0;
+
+    @media screen and (min-width: $md) {
+      align-items: flex-end;
+    }
+
+    & > li {
+      display: flex;
+      justify-content: center;
+
+      & > a {
+        border-left: solid 2px $white2;
+        padding: 5px 10px;
+        color: $white;
+        font-size: .65rem;
+      }
+      &:hover, .active{
+        & > a{color: $color2;}
+      }
+    }
+  }
+  
+  & .social{
+    @extend .flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 10px;
+    padding: 0;
+    .material-icon, i, svg{
+      color: $color2;
+      font-size: 1.5rem;
+      margin: 5px;
+    }
+
+    .material-icon:first-child,
+    i:first-child,
+    svg:first-child{
+      margin-left: 10px !important;
+    }
+  }
+
+  & .contact{
+    @extend .flex;
+    flex-wrap: wrap;
+    align-items: center;
+    &-group {
+      @extend .flex;
+      margin: 5px;
+      a{
+        font-size: .8rem;
+        color: $white;
+        margin-right: 10px;
+        min-width: 10%;
+        max-width: 60%;
+        display: inline;
+        white-space: nowrap;
+      }
+
+      label{
+        @extend .flex;
+        font-size: .65rem;
+        color: $color2;
+        font-weight: bold;
+        margin-right: 5px;
+        .material-icon, i, svg{
+          font-size: .9rem;
+        }
+      }
+    }
+
+    &-group:first-child {
+      margin-left: 0 !important;
+    }
+  }
+
+  & .copyright {
+    font-size: .65rem;
+    text-align: center;
+    text-justify: justify;
+    color: $white;
+
+    & > a, &  > .link{
+      color: $color2;
+    }
+
+    @media screen and (min-width: $md) {
+      text-align: right;
+    }
+  }
 }

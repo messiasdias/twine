@@ -1,33 +1,31 @@
 @mixin no-show-scroll {
   scroll-margin: 20px;
-  &::-webkit-scrollbar {
+  &::-webkit-scrollbar{
     width: 1px;
   }
 
-  &::-webkit-scrollbar-track {
+  &::-webkit-scrollbar-track{
     background-color: transparent;
   }
 
-  &::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb{
     background-color: transparent;
   }
 
-  &::-webkit-scrollbar-thumb:hover {
+  &::-webkit-scrollbar-thumb:hover{
     background-color: transparent;
   }
 }
 
-@mixin shadow ($size: 20px, $shadow_zize: 60px, $dark, $light) {
+@mixin shadow ($size, $shadow_zize, $dark, $light) {
   box-sizing: border-box;
-  border-radius: 5px;
   box-shadow:  $size $size $shadow_zize $dark,
-              -#{$size} -#{$size} 60px $light;
+              -#{$size} -#{$size} $shadow_zize $light;
 }
 
-@mixin shadow-reverse ($size: 20px, $shadow_zize: 60px, $dark, $light) {
+@mixin shadow-reverse ($size, $shadow_zize, $dark, $light) {
   box-sizing: border-box;
-  border-radius: 5px;
-  box-shadow:  -#{$size} -#{$size} 60px $light,
+  box-shadow:  -#{$size} -#{$size} $shadow_zize $light,
               $size $size $shadow_zize $dark;
 }
 

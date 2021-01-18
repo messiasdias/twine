@@ -58,10 +58,14 @@
             font-size: .9rem;
             font-weight: lighter;
             transition: transform ease-in-out .3s;
-            &:hover, .active {
+            .active {
+                color: $color2 !important;
+            }
+          }
+
+          &:hover{
+            & > a {
               color: $color2;
-              transform: translateY(-5px);
-              transition: transform ease-in-out .3s;
             }
           }
         }
@@ -128,7 +132,7 @@
       overflow: hidden;
     }
 
-    .left{
+    & > .left{
       padding: 40px;
       h1, strong, small{
         color: white;
@@ -145,7 +149,7 @@
       }
     }
 
-    .right {
+    & > .right {
       padding: 30px;
       @extend .flex;
 
@@ -154,8 +158,9 @@
       }
 
       .imgbox1, .imgbox2{
-        @extend .shadow-radius2;
+        @include shadow(10px, 60px, rgba($black , .7),rgba($white2, .1));
         border: solid 3px $color2;
+        border-radius: 5px;
         margin: 5px;
         transition: transform ease-in-out .3s;
         @media screen and (max-width: $md) {
